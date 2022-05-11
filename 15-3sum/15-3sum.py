@@ -11,7 +11,6 @@ class Solution(object):
             l = f + 1;
             h = len(nums) - 1
             while h - l > 0:
-                #print(f, l, h)
                 if nums[f] + nums[l] + nums[h] < 0:
                     l += 1
                 elif nums[f] + nums[l] + nums[h] > 0:
@@ -19,7 +18,6 @@ class Solution(object):
                 else:
                     res.append([nums[f], nums[l], nums[h]])
                     h -= 1
-                    #print(h)
                     while (h - l > 0 and nums[h + 1] == nums[h]):
                         h -= 1
             while (f != len(nums) - 2 and nums[f + 1] == nums[f]):
