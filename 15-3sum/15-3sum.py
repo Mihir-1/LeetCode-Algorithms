@@ -5,7 +5,6 @@ class Solution(object):
         vals = dict()
         res = []
         nums.sort()
-        print(nums)
         f = 0
         while f < len(nums) - 2:
             l = f + 1;
