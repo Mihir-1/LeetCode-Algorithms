@@ -6,6 +6,5 @@ class Solution(object):
             for j in range(i + 1, len(nums)):
                 if nums[j] > nums[i]:
                     maximum = max(maxSub[j] + 1, maximum)
-                #print(i, j, maxSub)
             maxSub[i] = maximum
         return max(maxSub)
