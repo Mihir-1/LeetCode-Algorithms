@@ -1,2 +1,2 @@
 # LeetCode-Algorithms
-Collection of LeetCode Questions.
+Collection of LeetCode Questions / My Solutions starting with Blind 75.
