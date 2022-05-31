@@ -7,5 +7,5 @@ class Solution(object):
             temp = max(cMin * n, cMax * n, n)
             cMin = min(cMin * n, cMax * n, n)
             cMax = temp
-            res = max(res, cMax);
+            res = max(res, cMax)
         return res
