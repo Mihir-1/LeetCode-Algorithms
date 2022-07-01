@@ -1,14 +1,20 @@
 class Solution(object):
     def isAnagram(self, s, t):
-        if len(s) != len(t):
-            return False
+        letterMap = dict()
+        for i in range (0, len(s)):
+            if (s[i] in letterMap):
+                letterMap.update({s[i]: (letterMap.get(s[i]) + 1)}) 
+            else:
+                letterMap.update({s[i]: 1})
         
-        countS, countT = {}, {}
-        
-        for i in range(len(s)):
-            countS[s[i]] = 1 + countS.get(s[i], 0)
-            countT[t[i]] = 1 + countT.get(t[i], 0)
-        for c in countS:
-            if countS[c] != countT.get(c, 0):
+        for i in range (0, len(t)):
+            if (t[i] in letterMap):
+                if (letterMap.get(t[i]) == 1):
+                    letterMap.pop(t[i])
+                else:
+                    letterMap.update({t[i] : (letterMap.get(t[i]) - 1)})
+            else:
                 return False
-        return True
+        if len(letterMap.keys()) == 0:
+            return True
+        return False        
