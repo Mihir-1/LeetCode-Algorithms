@@ -1,10 +1,7 @@
 class Solution(object):
     def groupAnagrams(self, strs):
-        wordMap = {}
+        wordMap = defaultdict(list)
         for word in strs:
             sWord = "".join(sorted(word))
-            if sWord in wordMap:
-                wordMap[sWord].append(word)
-            else:
-                wordMap[sWord] = [word]
+            wordMap[sWord].append(word)
         return wordMap.values()
