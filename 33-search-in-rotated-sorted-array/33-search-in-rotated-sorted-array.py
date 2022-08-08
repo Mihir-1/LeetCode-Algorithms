@@ -2,7 +2,6 @@ class Solution(object):
     def search(self, nums, target):
         l = 0
         r = len(nums) - 1
-        print(l, (l + r) // 2, r)
 
         while l < r:
             m = (l + r) // 2
@@ -16,6 +15,5 @@ class Solution(object):
                     r = m
                 else:
                     l = m + 1
-            print(l, (l + r) // 2, r)
 
         return l if nums[l] == target else -1
