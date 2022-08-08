@@ -1,28 +1,21 @@
 class Solution(object):
     def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
         l = 0
-        h = len(nums) - 1
-        while (h - l > 1):
-            m = (h + l) / 2
-            if nums[m] > nums[h]:
-                if nums[l] <= target and target < nums[m] :
-                    h = m
-                else:
+        r = len(nums) - 1
+        print(l, (l + r) // 2, r)
+
+        while l < r:
+            m = (l + r) // 2
+            if nums[m] < nums[l]:
+                if nums[m] <= target and target <= nums[r]:
                     l = m
+                else:
+                    r = m - 1
             else:
-                if  nums[m] <= target and target <= nums[h]:
-                    l = m
+                if nums[l] <= target and target <= nums[m]:
+                    r = m
                 else:
-                    h = m
-                
-        if nums[h] == target:
-            return h
-        elif nums[l] == target:
-            return l
-        else:
-            return -1
+                    l = m + 1
+            print(l, (l + r) // 2, r)
+
+        return l if nums[l] == target else -1
