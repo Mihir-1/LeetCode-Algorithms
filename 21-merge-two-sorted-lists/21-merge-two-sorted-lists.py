@@ -16,9 +16,8 @@ class Solution:
                 p.next = list2
                 p = p.next
                 list2 = list2.next
-        if list1:
-            p.next = list1
-        elif list2:
-            p.next = list2
+                
+        if list1 or list2:
+            p.next = list1 if list1 else list2
             
         return r.next
