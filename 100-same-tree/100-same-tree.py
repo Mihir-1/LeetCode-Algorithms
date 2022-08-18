@@ -10,12 +10,11 @@ class Solution:
         
         def dfs(p, q):
             if not p and not q:
-                return
+                return True
             if (not p or not q) or (p.val != q.val):
                 self.same = False
-                return
-            dfs(p.left, q.left)
-            dfs(p.right, q.right)
+                return False 
+            return dfs(p.left, q.left) and dfs(p.right, q.right)
         
-        dfs(p, q)
-        return self.same
+        
+        return dfs(p, q)
