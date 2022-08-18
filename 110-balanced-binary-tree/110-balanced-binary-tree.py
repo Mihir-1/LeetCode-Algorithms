@@ -10,8 +10,7 @@ class Solution:
             if not root:
                 return (True, 0)
             
-            l = dfs(root.left)
-            r = dfs(root.right)
+            l, r = dfs(root.left), dfs(root.right)
             bal = l[0] and r[0] and abs(l[1] - r[1]) <= 1
             return (bal, 1 + max(l[1], r[1]))
 
