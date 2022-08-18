@@ -10,12 +10,12 @@ class Solution:
         
         def dfs(root):
             if not root:
-                return -1
+                return 0
             
             lh = dfs(root.left)
             rh = dfs(root.right)
             
-            self.maxD = max(self.maxD, lh + rh + 2)
+            self.maxD = max(self.maxD, lh + rh)
             
             return 1 + max(lh, rh)
         
