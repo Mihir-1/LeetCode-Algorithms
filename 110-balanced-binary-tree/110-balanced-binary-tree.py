@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        # Params: TreeNode (root)
+        # Recursively determines: whether a TreeNode is balanced and its height
+        # Returns: tuple (boolean, int) (True if TreeNode is balanced, height of Tree)
         def balHeight(root):
             if not root:
                 return (True, 0)
