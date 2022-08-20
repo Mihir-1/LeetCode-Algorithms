@@ -11,9 +11,7 @@ class Solution:
                 maxArea = max(maxArea, (i - val[0]) * val[1])
             stack.append((val[0], h))
         
-        # Empty stack
-        while stack:
-            val = stack.pop()
-            maxArea = max(maxArea, (len(heights) - val[0]) * val[1])
+        for i, h in stack:
+            maxArea = max(maxArea, (len(heights) - i) * h)
             
         return maxArea
