@@ -3,7 +3,6 @@ class Solution:
         stack = [] # tuple: (int: (start idx), int: (height))
         maxArea = 0
         
-        # Iterate array
         for i, h in enumerate(heights):
             val = [i]
             while stack and stack[-1][1] > h:
