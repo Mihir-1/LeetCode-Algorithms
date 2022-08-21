@@ -23,8 +23,5 @@ class Solution:
             carry = total >= 10
             p.next = ListNode(total % 10)
             p = p.next
-        
-        if carry:
-            p.next = ListNode(1)
             
         return res.next
