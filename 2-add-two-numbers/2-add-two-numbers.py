@@ -10,9 +10,8 @@ class Solution:
         carry = False
         
         while l1 or l2 or carry:
-            total = 0
-            if carry:
-                total += 1
+            total = int(carry)
+            
             if l1:
                 total += l1.val
                 l1 = l1.next
@@ -20,7 +19,7 @@ class Solution:
                 total += l2.val
                 l2 = l2.next
                 
-            carry = total >= 10
+            carry = total // 10
             p.next = ListNode(total % 10)
             p = p.next
             
