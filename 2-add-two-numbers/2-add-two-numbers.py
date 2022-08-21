@@ -9,7 +9,7 @@ class Solution:
         p = res
         carry = False
         
-        while l1 or l2:
+        while l1 or l2 or carry:
             total = 0
             if carry:
                 total += 1
