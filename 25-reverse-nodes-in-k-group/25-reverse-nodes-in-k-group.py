@@ -10,9 +10,7 @@ class Solution:
         
         while True:
             i = k - 1
-            while i > 0:
-                if not end:
-                    return head.next
+            while i > 0 and end:
                 end = end.next
                 i -= 1
             if not end:
