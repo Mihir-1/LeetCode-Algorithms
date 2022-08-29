@@ -18,28 +18,13 @@ class Solution:
 
             p = ListNode(None)
             c = start
+            
             while p is not end:
                 n = c.next
                 c.next = p
-                p = c
-                c = n
+                p, c = c, n
             past.next = p
             start.next = c
             past = start
             end = start = start.next
-            #print(head)
         return head.next
-    
-    def reverseGroup(self):
-        p = ListNode(None)
-        c = self.start
-        while p is not self.end:
-            n = c.next
-            c.next = p
-            p = c
-            c = n
-        self.past.next = p
-        self.start.next = c
-        self.past = self.start
-        self.end = self.start = self.start.next
-        return
