@@ -5,12 +5,7 @@ class Solution:
                 return True
             if (0 > i or i >= len(board)) or (0 > j or j >= len(board[0])) or word[0] != board[i][j] or (i, j) in used:
                 return False
-            # print("Current:", board[i][j])
-            # print("word:", word)
-            # print("used", used)
             
-            possible = False
-
             used.add((i, j))
             newWrd = word[1:]
             possible = dfs(i + 1, j, newWrd, used) or dfs(i - 1, j, newWrd, used) or dfs(i, j + 1, newWrd, used) or dfs(i, j - 1, newWrd, used)
