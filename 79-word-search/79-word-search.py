@@ -23,7 +23,3 @@ class Solution:
                     if dfs(i, j, word, set()):
                         return True
         return False
-    
-    
-
-    
