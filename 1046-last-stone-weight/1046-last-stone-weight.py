@@ -5,6 +5,6 @@ class Solution:
         while len(stones) > 1:
             a = heappop(stones)
             b = heappop(stones)
-            if a - b:
-                heappush(stones, -1 * abs(a - b))
+            if b - a:
+                heappush(stones, -1 * (b - a))
         return -1 * stones[0] if stones else 0
