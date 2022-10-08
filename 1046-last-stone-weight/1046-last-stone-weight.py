@@ -6,5 +6,5 @@ class Solution:
             a = heappop(stones)
             b = heappop(stones)
             if b - a:
-                heappush(stones, -1 * (b - a))
+                heappush(stones, a - b)
         return -1 * stones[0] if stones else 0
