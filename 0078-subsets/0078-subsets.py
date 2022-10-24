@@ -1,7 +1,13 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = [[]]
-        for num in nums:
-            for i in range(len(res)):
-                res.append(res[i] + [num])
+        res = []
+        
+        def dfs(i, cur):
+            if i == len(nums):
+                res.append(cur)
+                return
+            dfs(i + 1, cur + [nums[i]])
+            dfs(i + 1, cur)
+        
+        dfs(0, [])
         return res
