@@ -15,7 +15,6 @@ class Solution:
         
         res = []
         def dfs(i, cur):
-            print(cur)
             # Base Case: reached end of string
             if i == len(digits):
                 res.append(cur)
