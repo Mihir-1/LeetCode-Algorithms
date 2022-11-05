@@ -21,3 +21,14 @@ class Solution:
             
         dfs([s[0]], 1)
         return res
+    
+    """
+    ASSUMING: s.length is not constant
+    Runtime: 2^n
+              - 2^n (Each index in input has 2 branches: include not include)
+    Memory:  2^n 
+              - n*2^n (Length of res) 
+              > 
+              Ignored:
+              - n/2 Recursive Stack Length
+    """
