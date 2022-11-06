@@ -13,7 +13,6 @@ class Solution:
                 res.append([''.join(board[i]) for i in range(n)])
                 return
             for c in range(n):
-                #print(r, c)
                 if (r - c not in rcdiff) and (r + c not in rcsum) and (c not in cols):
                     board[r][c] = 'Q'
                     rcdiff.add(r - c)
@@ -25,6 +24,5 @@ class Solution:
                     cols.remove(c)
                     board[r][c] = '.'
                     
-            
         dfs(0)
         return res
