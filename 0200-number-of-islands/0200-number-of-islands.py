@@ -8,7 +8,6 @@ class Solution:
         for i in range(rows):
             for j in range(cols):
                 if grid[i][j] == "1" and (i, j) not in visited:
-                    #print(i, j, grid[i][j] == "1")
                     q.append((i, j))
                     islands += 1
                 while q:
@@ -19,19 +18,5 @@ class Solution:
                         if 0 <= r - 1 < rows and (r - 1, c) not in visited and grid[r - 1][c] == "1": q.append((r - 1, c))
                         if 0 <= c + 1 < cols and (r, c + 1) not in visited and grid[r][c + 1] == "1": q.append((r, c + 1))
                         if 0 <= c - 1 < cols and (r, c - 1) not in visited and grid[r][c - 1] == "1": q.append((r, c - 1))
-                        
-        # if grid[0][0] == "1" and (0, 0) not in visited:
-        #     #print(i, j, grid[i][j] == "1")
-        #     q.append((0, 0))
-        #     islands += 1
-        # while q:
-        #     r, c = q.popleft()
-        #     if (r, c) not in visited:
-        #         visited.add((r, c))
-        #         if 0 <= r + 1 < rows and (r + 1, c) not in visited and grid[r + 1][c] == "1": q.append((r + 1, c))
-        #         if 0 <= r - 1 < rows and (r - 1, c) not in visited and grid[r - 1][c] == "1": q.append((r - 1, c))
-        #         if 0 <= c + 1 < cols and (r, c + 1) not in visited and grid[r][c + 1] == "1": q.append((r, c + 1))
-        #         if 0 <= c - 1 < cols and (r, c - 1) not in visited and grid[r][c - 1] == "1": q.append((r, c - 1))
-        print(visited, len(visited))
-        
+
         return islands
