@@ -12,7 +12,6 @@ class Solution:
                 if bool(grid[r][c]) and (r, c) not in visited:
                     q.append((r, c))
                 while q: 
-                    #print('\t', q)
                     row, col = q.popleft()
                     if (row, col) not in visited:
                         visited.add((row, col))
@@ -22,6 +21,5 @@ class Solution:
                         if 0 <= col + 1 < cols and (row, col + 1) not in visited and bool(grid[row][col + 1]): q.append((row, col + 1))
                         if 0 <= col - 1 < cols and (row, col - 1) not in visited and bool(grid[row][col - 1]): q.append((row, col - 1))
                 res = max(area, res)
-                #print(r, c, area)
         return res
     
