@@ -5,7 +5,7 @@ class Solution:
             r = replace.get(c, None)
             if r and t[i] != r:
                 return False
-            if t[i] in replace.values() and replace.get(c, '') != t[i]:
+            if t[i] in replace.values() and r != t[i]:
                 return False
             replace[c] = t[i]
         return True
