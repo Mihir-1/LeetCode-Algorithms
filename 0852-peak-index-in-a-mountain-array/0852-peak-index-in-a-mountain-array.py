@@ -8,3 +8,11 @@ class Solution:
             else :
                 r = m
         return r
+        
+        """
+        Runtime: O(log(n))
+            - binary search single
+        Memory: O(1)
+            - 3 ints
+        
+        """
