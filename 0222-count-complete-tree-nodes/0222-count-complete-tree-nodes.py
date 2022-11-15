@@ -28,5 +28,14 @@ class Solution:
                 total -= 2 ** depth
             else:
                 temp = temp.right
-
+    
         return total
+    
+    """
+    Runtime: O(log(n) ^ 2)
+        - getDepth takes log(n) time
+        - called log(n) times
+        
+    Memory: O(1)
+        - constant number variables being declared
+    """
