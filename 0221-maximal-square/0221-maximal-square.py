@@ -10,19 +10,14 @@ class Solution:
         for r in range(1, rows):
             for c in range(1, cols):
                 if matrix[r][c] == "1":
-                    # print(r, c)
-                    # print('top', int(matrix[r - 1][c]))
-                    # print('left', int(matrix[r][c - 1]))
-                    # print('topleft', int(matrix[r - 1][c - 1]))
                     matrix[r][c] = min(int(matrix[r - 1][c]), int(matrix[r][c - 1]), int(matrix[r - 1][c - 1])) + 1
                     res = max(matrix[r][c], res)
         return res ** 2
     
     """
-    [
-    ["1","1","1","1","0"],
-    ["1","1","1","1","0"],
-    ["1","1","1","1","1"],
-    ["1","1","1","1","1"],
-    ["0","0","1","1","1"]]
+    Runtime: O(m * n)
+        - Loop through matrix (m x n)
+    Memory: O(1)
+        - Constant number of variables
+        - Memoize in place
     """
