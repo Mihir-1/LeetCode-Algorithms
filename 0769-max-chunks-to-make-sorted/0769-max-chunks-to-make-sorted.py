@@ -1,15 +1,14 @@
 class Solution:
     def maxChunksToSorted(self, arr: List[int]) -> int:
-        partitions = [0]
-        nums = set()
+        curMax = -1
+        res = 0
         for i, num in enumerate(arr):
-            nums.add(num)
-            if nums == set(range(partitions[-1], i + 1)):
-                nums = set()
-                partitions.append(i + 1)
-        return len(partitions) - 1
+            curMax = max(num, curMax)
+            if curMax == i:
+               res +=1
+        return res
     
         """
-        Runtime:
+        Runtime: O(n^2)
         """
             
