@@ -4,8 +4,12 @@ class Solution:
         nums = set()
         for i, num in enumerate(arr):
             nums.add(num)
-            if nums == set([val for val in range(partitions[-1], i + 1)]):
+            if nums == set(range(partitions[-1], i + 1)):
                 nums = set()
                 partitions.append(i + 1)
         return len(partitions) - 1
+    
+        """
+        Runtime:
+        """
             
