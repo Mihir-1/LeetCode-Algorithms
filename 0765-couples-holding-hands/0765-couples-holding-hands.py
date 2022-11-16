@@ -16,12 +16,15 @@ class Solution:
                 if swapIdx != i:
                     tempNum = row[swapIdx]
                     row[swapIdx] = row[i]
-
                     row[i] = tempNum
                     diff[tempNum] = i
-                    #print('swap', i, swapIdx)
                     swaps += 1
-            #print(row)
-
         return swaps
+    
+        """
+        Runtime: O(n)
+            - double pass with swaps
+        Memory: O(n)
+            - hashmap
+        """
                 
