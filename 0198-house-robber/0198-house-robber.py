@@ -4,8 +4,7 @@ class Solution:
         # 3 2 p c
         for n in nums:
             temp = cur
-            cur = max(neigh2 + n, prev + n)
-            temp1 = prev
+            cur, temp1 = max(neigh2 + n, prev + n), prev
             prev = temp
             temp2 = neigh2
             neigh2 = temp1
