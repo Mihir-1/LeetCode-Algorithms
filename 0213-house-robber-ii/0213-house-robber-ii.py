@@ -9,14 +9,12 @@ class Solution:
             temp = cur
             cur = max(cur, prev + n)
             prev = temp
-            print(prev, cur)
         
         prev = cur2 = 0
         for n in second:
             temp = cur2
             cur2 = max(cur2, prev + n)
             prev = temp
-            print(prev, cur2)
         
         return max(cur, cur2)
     
