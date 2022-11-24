@@ -24,5 +24,5 @@ class Solution:
         Runtime: O(n)
             - 2 pass - O(2n) -> O(n)
         Memory: O(1)
-            -
+            - 3 ints
         """
