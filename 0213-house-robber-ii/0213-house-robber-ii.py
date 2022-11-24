@@ -1,8 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if len(nums) == 1: return nums[0]
-        first = nums[:-1]
-        second = nums[1:]
         
         prev = cur = 0
         for i in range(len(nums) - 1):
