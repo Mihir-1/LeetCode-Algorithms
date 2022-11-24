@@ -4,18 +4,25 @@ class Solution:
         first = nums[:-1]
         second = nums[1:]
         
-        prev2 = prev = cur = 0
+        prev = cur = 0
         for n in first:
             temp = cur
-            cur, temp2 = max(prev + n, prev2 + n), prev
-            prev, prev2 = temp, temp2
-        firstMax = max(cur, prev)
+            cur = max(cur, prev + n)
+            prev = temp
+            print(prev, cur)
         
-        prev2 = prev = cur = 0
+        prev = cur2 = 0
         for n in second:
-            temp = cur
-            cur, temp2 = max(prev + n, prev2 + n), prev
-            prev, prev2 = temp, temp2
-        secondMax = max(cur, prev)
+            temp = cur2
+            cur2 = max(cur2, prev + n)
+            prev = temp
+            print(prev, cur2)
         
-        return max(firstMax, secondMax)
+        return max(cur, cur2)
+    
+        """
+        Runtime: O(n)
+            - 2 pass - O(2n) -> O(n)
+        Memory: O(1)
+            -
+        """
