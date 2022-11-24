@@ -5,15 +5,15 @@ class Solution:
         second = nums[1:]
         
         prev = cur = 0
-        for n in first:
+        for i in range(len(nums) - 1):
             temp = cur
-            cur = max(cur, prev + n)
+            cur = max(cur, prev + nums[i])
             prev = temp
         
         prev = cur2 = 0
-        for n in second:
+        for i in range(1, len(nums)):
             temp = cur2
-            cur2 = max(cur2, prev + n)
+            cur2 = max(cur2, prev + nums[i])
             prev = temp
         
         return max(cur, cur2)
