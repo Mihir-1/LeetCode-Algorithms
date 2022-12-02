@@ -5,5 +5,4 @@ class Solution:
             if n == 0:
                 maj = num
             n += int(maj == num) * 2 - 1
-            print(maj, n)
         return maj
