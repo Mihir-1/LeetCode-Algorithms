@@ -4,9 +4,6 @@ class Solution:
         for num in nums:
             if n == 0:
                 maj = num
-            if maj == num:
-                n += 1
-            else:
-                n -= 1
+            n += int(maj == num) * 2 - 1
             print(maj, n)
         return maj
