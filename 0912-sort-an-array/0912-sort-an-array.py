@@ -1,33 +1,31 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        def merge(l: List[int], r: List[int]) -> List[int]:
-            # Exit Recursion for lists smaller than 2
-            if len(l) == 1 and len(r) == 1:
-                return l + r if l[0] < r[0] else r + l
-            if len(l) == 0:
-                return r
-            if len(r) == 0:
-                return l
+        def mergeSort(l: int, r: int, arr: List[int]) -> List[int]:
+            # Exit Recursion when no partitions to be made
+            if l == r:
+                return arr
             
             # Partition
-            l = merge(l[:len(l) // 2], l[len(l) // 2:])
-            r = merge(r[:len(r) // 2], r[len(r) // 2:])
+            m = (l + r) // 2
+            mergeSort(l, m, arr)
+            mergeSort(m + 1, r, arr)
 
             # Merge
+            left = arr[l : m + 1]
+            right = arr[m + 1 : r + 1]
             i, j = 0, 0
-            merged = []
-            while i < len(l) or j < len(r):
-                if i == len(l): 
-                    merged.append(r[j])
+            while i < len(left) or j < len(right):
+                if i == len(left): 
+                    arr[l + i + j] = right[j]
                     j += 1
                 else: 
-                    if j == len(r) or l[i] <= r[j]:
-                        merged.append(l[i])
+                    if j == len(right) or left[i] <= right[j]:
+                        arr[l + i + j] = left[i]
                         i += 1
                     else:
-                        merged.append(r[j])
+                        arr[l + i + j] = right[j]
                         j += 1
-            return merged
+            return arr
         
         # Initiate
-        return merge(nums[:len(nums) // 2], nums[len(nums) // 2:])
+        return mergeSort(0, len(nums) - 1, nums)
