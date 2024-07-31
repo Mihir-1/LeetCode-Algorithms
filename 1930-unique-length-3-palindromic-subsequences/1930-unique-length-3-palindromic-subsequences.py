@@ -19,3 +19,8 @@ class Solution:
                 count += len(set(s[first + 1: last]))
         
         return count
+    
+'''
+n = s.length
+O(n)
+'''
