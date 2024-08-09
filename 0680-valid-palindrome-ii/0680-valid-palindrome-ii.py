@@ -10,7 +10,6 @@ class Solution:
         
         l, r = 0, len(s) - 1
         while l < r:
-            print(s[l], s[r])
             if s[l] != s[r]:
                 if s[r - 1] == s[l] or s[l + 1] == s[r]:
                     a = validPalindromeHelper(l + 1, r)
@@ -22,9 +21,3 @@ class Solution:
                 l += 1
                 r -= 1
         return True
-                
-        
-'''
-    s = "baaaa"
-    
-'''
