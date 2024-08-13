@@ -22,6 +22,5 @@ class Solution:
                 if node.right:
                     q.append(node.right)
             res += [cur]
-                    
 
         return res
