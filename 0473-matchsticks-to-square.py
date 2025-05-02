@@ -26,5 +26,5 @@ class Solution:
 
 '''
 Time: O(4^n)
-Space: O(log n)
+Space: O(n)
 '''
