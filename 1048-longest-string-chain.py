@@ -3,7 +3,7 @@ class Solution:
         words.sort(reverse=True, key=len)
         chainLengths = {w: 1 for w in words}
 
-        for i, w in enumerate(words):
+        for w in words:
             for j in range(len(w)):
                 testWord = w[:j] + w[j+1:]
                 if testWord in chainLengths:
