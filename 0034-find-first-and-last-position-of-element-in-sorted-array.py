@@ -7,7 +7,6 @@ class Solution:
         j = len(nums) - 1
         while i < j:
             mid = (i + j) // 2
-            #print(i, mid, j)
             if nums[mid] < target:
                 i = mid + 1
             else:
