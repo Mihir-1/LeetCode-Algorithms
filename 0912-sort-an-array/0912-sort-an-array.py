@@ -1,5 +1,33 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
+        if len(nums) == 1:
+            return nums
+
+        mid = len(nums)//2
+        a1, a2 = self.sortArray(nums[:mid]), self.sortArray(nums[mid:])
+        i = j = 0
+        res = []
+        while i < len(a1) and j < len(a2):
+            if a2[j] < a1[i]:
+                res.append(a2[j])
+                j += 1
+            else:
+                res.append(a1[i])
+                i += 1
+
+        if i < len(a1):
+            res += a1[i:]
+        elif j < len(a2):
+            res += a2[j:]
+
+        return res
+
+        '''
+        Time: O(n logn)
+        Space: O(n)
+        '''
+
+        """
         def mergeSort(l: int, r: int, arr: List[int]) -> List[int]:
             # Exit Recursion when no partitions to be made
             if l == r:
@@ -29,3 +57,4 @@ class Solution:
         
         # Initiate
         return mergeSort(0, len(nums) - 1, nums)
+        """
